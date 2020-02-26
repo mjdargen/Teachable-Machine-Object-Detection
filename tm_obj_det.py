@@ -70,6 +70,8 @@ def speak(speakQ, ):
             # text-to-speech say class name from labels.txt
             engine.say(msg)
             engine.runAndWait()
+        if msg == "Background":
+            last_msg = ""
 
 
 # main line code
@@ -113,7 +115,7 @@ if __name__ == '__main__':
     speakQ = multiprocessing.Queue()
 
     # creating speech process to not hang processor
-    p1 = multiprocessing.Process(target=speak, args=(speakQ, ))
+    p1 = multiprocessing.Process(target=speak, args=(speakQ, ), daemon="True")
 
     # starting process 1 - speech
     p1.start()
