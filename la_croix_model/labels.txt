@@ -1,0 +1,7 @@
+0 Mango
+1 Key Lime
+2 Pamplemousse
+3 Tangerine
+4 Pasteque
+5 Coconut
+6 Background
