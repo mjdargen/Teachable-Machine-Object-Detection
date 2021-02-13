@@ -5,7 +5,7 @@
 # https://dargenio.dev
 # https://github.com/mjdargen
 # Created: February 6, 2020
-# Last Modified: February 23, 2020
+# Last Modified: February 13, 2021
 #
 # My program to execute Arun Ponnusamy's OpenCV wrapper for
 # a YOLO common object detection model. More info below:
@@ -47,9 +47,7 @@ def speak(speakQ, ):
             engine.runAndWait()
 
 
-# main line code
-# if statement to circumvent issue in windows
-if __name__ == '__main__':
+def main():
 
     # instantiate video capture object
     cap = cv2.VideoCapture(0)
@@ -81,3 +79,7 @@ if __name__ == '__main__':
     cap.release()
     p1.terminate()
     cv2.destroyAllWindows()
+
+
+if __name__ == '__main__':
+    main()

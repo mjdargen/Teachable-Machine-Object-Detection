@@ -15,24 +15,16 @@ python get-pip.py
 del get-pip.py
 
 :: install PIP packages
-pip install setuptools
-pip install virtualenv virtualenvwrapper-win
+pip install setuptools virtualenv virtualenvwrapper-win
 
 :: setup virtual environment
-virtualenv ../TMenv
-call ..\TMenv\Scripts\activate
+virtualenv ./TMenv
+call .\TMenv\Scripts\activate
 
 :: install PIP packages in virtual environment
-..\TMenv\Scripts\pip install numpy==1.18.1
-..\TMenv\Scripts\pip install scipy==1.4.1
-..\TMenv\Scripts\pip install pypiwin32
-..\TMenv\Scripts\pip install pyttsx3==2.71
-..\TMenv\Scripts\pip install matplotlib
-..\TMenv\Scripts\pip install cvlib==0.2.3
-..\TMenv\Scripts\pip install opencv-python==4.2.0.32
-..\TMenv\Scripts\pip install tensorflow==2.0.0
+.\TMenv\Scripts\pip install -r ./installation_scripts/windows_requirements.txt
 deactivate
 
 ECHO Done!
 echo To activate your virtual environment, use command './TMenv/Scripts/activate'.
-echo To exit your virtual enviroment, use command 'deactivate'.
+echo To exit your virtual environment, use command 'deactivate'.

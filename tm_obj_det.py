@@ -5,7 +5,7 @@
 # https://dargenio.dev
 # https://github.com/mjdargen
 # Created: February 6, 2020
-# Last Modified: February 6, 2020
+# Last Modified: February 13, 2021
 #
 # This program uses Tensorflow and OpenCV to detect objects in the video
 # captured from your webcam. This program is meant to be used with machine
@@ -44,8 +44,11 @@ import cv2
 import tensorflow.keras as tf
 import pyttsx3
 import math
+import os
 # use matplotlib if cv2.imshow() doesn't work
 # import matplotlib.pyplot as plt
+
+DIR_PATH = os.path.dirname(os.path.realpath(__file__))
 
 
 # this process is purely for text-to-speech so it doesn't hang processor
@@ -74,12 +77,10 @@ def speak(speakQ, ):
             last_msg = ""
 
 
-# main line code
-# if statement to circumvent issue in windows
-if __name__ == '__main__':
+def main():
 
     # read .txt file to get labels
-    labels_path = "la_croix_model/labels.txt"
+    labels_path = f"{DIR_PATH}/la_croix_model/labels.txt"
     # open input file label.txt
     labelsfile = open(labels_path, 'r')
 
@@ -94,7 +95,7 @@ if __name__ == '__main__':
     labelsfile.close()
 
     # load the teachable machine model
-    model_path = 'la_croix_model/keras_model.h5'
+    model_path = f"{DIR_PATH}/la_croix_model/keras_model.h5"
     model = tf.models.load_model(model_path, compile=False)
 
     # initialize webcam video object
@@ -226,3 +227,7 @@ if __name__ == '__main__':
 
     # terminate process 1
     p1.terminate()
+
+
+if __name__ == '__main__':
+    main()

@@ -38,21 +38,14 @@ sudo rm get-pip.py
 sudo rm -rf ~/.cache/pip
 
 # install pip packages
-sudo pip3 install setuptools
-sudo pip3 install virtualenv virtualenvwrapper
+sudo pip3 install setuptools virtualenv virtualenvwrapper
 
 # setup virtual environment
 virtualenv TMenv
 source TMenv/bin/activate
 
 # install PIP packages in virtual environment
-pip3 install numpy==1.18.1
-pip3 install scipy==1.4.1
-pip3 install pyttsx3==2.71
-pip3 install matplotlib
-pip3 install cvlib==0.2.3
-pip3 install opencv-contrib-python==4.2.0.32
-pip3 install tensorflow==2.0.0
+pip3 install -r ./installation_scripts/linux_requirements.txt
 deactivate
 
 # update packages and remove any unnecessary packages

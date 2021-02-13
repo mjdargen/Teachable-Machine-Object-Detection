@@ -1,0 +1,6 @@
+pypiwin32
+cvlib==0.2.3
+opencv-python==4.2.0.32
+tensorflow>=2.4.0
+pyttsx3==2.71
+matplotlib
